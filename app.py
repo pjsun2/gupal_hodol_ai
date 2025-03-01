@@ -1,5 +1,8 @@
 import os
 import platform
+import streamlit as st
+from blog_text_mining import crawl_naver_blog, text_mining
+
 
 # 플랫폼에 따라 JAVA_HOME 환경 변수 설정
 if platform.system() == "Windows":
@@ -9,10 +12,6 @@ else:
 
 # PATH 환경 변수에 JAVA_HOME의 bin 디렉토리 추가
 os.environ["PATH"] = os.environ["JAVA_HOME"] + "/bin:" + os.environ["PATH"]
-
-import jpype
-import streamlit as st
-from blog_text_mining import crawl_naver_blog, text_mining
 
 # Streamlit 페이지 기본 설정
 st.set_page_config(page_title="구팔호돌AI", layout="centered")
