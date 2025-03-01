@@ -3,7 +3,9 @@ import os
 
 from blog_text_mining import crawl_naver_blog, text_mining
 
+# Render 서버의 Java (JVM) 환경 설정
 os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
+os.environ["PATH"] = os.environ["JAVA_HOME"] + "/bin:" + os.environ["PATH"]
 
 # Streamlit 페이지 기본 설정
 st.set_page_config(page_title="구팔호돌AI", layout="centered")
