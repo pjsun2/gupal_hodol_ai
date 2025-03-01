@@ -1,4 +1,5 @@
 import streamlit as st
+import jpype
 import os
 
 from blog_text_mining import crawl_naver_blog, text_mining
