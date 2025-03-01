@@ -8,6 +8,9 @@ os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64" #서버 배포시
 #os.environ["JAVA_HOME"] = "C:/Program Files/Java/jdk-23" #로컬 테스트
 os.environ["PATH"] = os.environ["JAVA_HOME"] + "/bin:" + os.environ["PATH"]
 
+jvmpath = jpype.getDefaultJVMPath()
+print("JVM Path:", jvmpath)
+
 # Streamlit 페이지 기본 설정
 st.set_page_config(page_title="구팔호돌AI", layout="centered")
 
