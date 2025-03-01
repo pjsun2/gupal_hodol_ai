@@ -1,5 +1,9 @@
 import streamlit as st
+import os
+
 from blog_text_mining import crawl_naver_blog, text_mining
+
+os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
 
 # Streamlit 페이지 기본 설정
 st.set_page_config(page_title="구팔호돌AI", layout="centered")
@@ -27,10 +31,10 @@ if st.button("크롤링 및 분석 시작"):
                 st.dataframe(df)
 
                 st.write("📈 단어 빈도 그래프")
-                st.image(freq_image_path)
+                st.image(freq_image_path, caption="단어 빈도 그래프", use_column_width=True)
 
                 st.write("☁️ 워드클라우드")
-                st.image(wordcloud_image_path)
+                st.image(wordcloud_image_path, caption="워드클라우드", use_column_width=True)
 
         else:
             st.error("❌ 블로그 내용을 가져오지 못했습니다. 올바른 URL인지 확인해 주세요.")
